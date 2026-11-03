@@ -1,0 +1,96 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="StudentRegistrationApp.MainWindow"
+        Title="Student Registration"
+        Width="800" Height="600"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="30">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- FORM INPUT -->
+        <StackPanel Grid.Column="0">
+            <TextBlock Text="STUDENT REGISTRATION"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="0,0,0,20" />
+
+            <TextBlock Text="NIM" />
+            <TextBox x:Name="txtNim"
+                     Height="35"
+                     Margin="0,5,0,15" />
+
+            <TextBlock Text="Nama Mahasiswa" />
+            <TextBox x:Name="txtNama"
+                     Height="35"
+                     Margin="0,5,0,15" />
+
+            <TextBlock Text="Program Studi" />
+            <ComboBox x:Name="cmbProdi"
+                      Height="35"
+                      Margin="0,5,0,15"
+                      HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="Teknik Informatika" />
+                <ComboBoxItem Content="Sistem Informasi" />
+                <ComboBoxItem Content="Manajemen" />
+                <ComboBoxItem Content="Akuntansi" />
+            </ComboBox>
+
+            <TextBlock Text="Jenis Kelamin" />
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,15">
+                <RadioButton x:Name="rbLaki"
+                             GroupName="Gender"
+                             Content="Laki-laki"
+                             Margin="0,0,20,0" />
+                <RadioButton x:Name="rbPerempuan"
+                             GroupName="Gender"
+                             Content="Perempuan" />
+            </StackPanel>
+
+            <!-- TextBlock khusus notifikasi validasi pengganti MessageBox -->
+            <TextBlock x:Name="txtPesan"
+                       Foreground="Red"
+                       Margin="0,0,0,10"
+                       FontWeight="SemiBold" />
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Simpan"
+                        Width="120"
+                        Height="40"
+                        Margin="0,0,10,0"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Click="BtnSimpan_Click" />
+                <Button Content="Reset"
+                        Width="120"
+                        Height="40"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Click="BtnReset_Click" />
+            </StackPanel>
+        </StackPanel>
+
+        <!-- DAFTAR DATA -->
+        <StackPanel Grid.Column="2">
+            <TextBlock Text="DATA MAHASISWA"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="0,0,0,20" />
+
+            <ListBox x:Name="lstMahasiswa"
+                     Height="350" />
+
+            <Button Content="Hapus"
+                    Width="120"
+                    Height="40"
+                    Margin="0,10,0,0"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Click="BtnHapus_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+**/bin/
+**/obj/
+.vs/
+.vscode/
+TestResults/
+*.user
+*.suo
+*.log
+*.pdf
+.env
+.env.*
+!.env.example
+*.db
+*.mdf
+*.ldf
+*.bak
